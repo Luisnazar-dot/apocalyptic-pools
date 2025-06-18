@@ -1,29 +1,37 @@
-import React, { useState, useEffect } from 'react';
-
-const events = [
-  { emoji: "🔥", label: "Colapso climático global" },
-  { emoji: "🧠", label: "Dominio total de la IA" },
-  { emoji: "🦠", label: "Nueva pandemia viral" },
-  { emoji: "☢️", label: "Guerra nuclear" }
-];
+import React, { useState } from 'react';
 
 const PredictionCard = () => {
   const [selected, setSelected] = useState(null);
-  const [votes, setVotes] = useState({});
 
-  // Simular datos o cargar desde localStorage
-  useEffect(() => {
-    const storedVotes = JSON.parse(localStorage.getItem("votes")) || {};
-    setVotes(storedVotes);
-  }, []);
+  const options = [
+    { emoji: '🔥', text: 'Colapso climático global' },
+    { emoji: '🧠', text: 'Dominio total de la IA' },
+    { emoji: '🦠', text: 'Nueva pandemia viral' },
+    { emoji: '💣', text: 'Guerra nuclear' },
+  ];
 
-  const handleVote = (label) => {
-    if (selected) return;
+  const handleClick = (index) => {
+    setSelected(index);
+    console.log('Seleccionaste:', options[index].text);
+  };
 
-    const updatedVotes = {
-      ...votes,
-      [label]: (votes[label] || 0) + 1
-    };
+  return (
+    <div style={{
+      backgroundColor: '#222',
+      padding: '2rem',
+      borderRadius: '12px',
+      color: 'lime',
+      fontFamily: 'sans-serif',
+      maxWidth: '800px',
+      margin: '2rem auto'
+    }}>
+      <h2>¿Qué evento apocalíptico sucederá primero?</h2>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {options.map((option, index) => (
+          <li
+            key={index}
+            onClick={() => handleClick(index)}
+            style={{
+              curs
 
-    localStorage.setItem("votes", JSON.stringify(upda
 
