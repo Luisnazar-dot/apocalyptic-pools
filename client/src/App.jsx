@@ -1,10 +1,13 @@
 import React from 'react';
+import PredictionCard from './components/PredictionCard';
 
-export default function App() {
+function App() {
   return (
-    <div className="app">
-      <h1>Apocalyptic Pools</h1>
-      <p>La única plataforma donde predecir el caos... paga.</p>
+    <div>
+      <PredictionCard />
     </div>
   );
 }
+
+export default App;
+
