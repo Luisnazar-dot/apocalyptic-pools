@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const events = [
+  { emoji: "🔥", label: "Colapso climático global" },
+  { emoji: "🧠", label: "Dominio total de la IA" },
+  { emoji: "🦠", label: "Nueva pandemia viral" },
+  { emoji: "☢️", label: "Guerra nuclear" }
+];
 
 const PredictionCard = () => {
-  return (
-    <div style={{ background: '#222', color: '#0f0', padding: '20px', borderRadius: '10px', marginTop: '30px' }}>
-      <h2>¿Qué evento apocalíptico sucederá primero?</h2>
-      <ul>
-        <li>🔥 Colapso climático global</li>
-        <li>🧠 Dominio total de la IA</li>
-        <li>🦠 Nueva pandemia viral</li>
-        <li>💣 Guerra nuclear</li>
-      </ul>
-    </div>
-  );
-};
+  const [selected, setSelected] = useState(null);
+  const [votes, setVotes] = useState({});
 
-export default PredictionCard;
+  // Simular datos o cargar desde localStorage
+  useEffect(() => {
+    const storedVotes = JSON.parse(localStorage.getItem("votes")) || {};
+    setVotes(storedVotes);
+  }, []);
+
+  const handleVote = (label) => {
+    if (selected) return;
+
+    const updatedVotes = {
+      ...votes,
+      [label]: (votes[label] || 0) + 1
+    };
+
+    localStorage.setItem("votes", JSON.stringify(upda
+
