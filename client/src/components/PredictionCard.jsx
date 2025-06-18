@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const PredictionCard = () => {
+function PredictionCard() {
   const [selected, setSelected] = useState(null);
 
   const options = [
     { emoji: '🔥', text: 'Colapso climático global' },
     { emoji: '🧠', text: 'Dominio total de la IA' },
-    { emoji: '🦠', text: 'Nueva pandemia viral' },
-    { emoji: '💣', text: 'Guerra nuclear' },
+    { emoji: '🧬', text: 'Nueva pandemia viral' },
+    { emoji: '☢️', text: 'Guerra nuclear' },
   ];
 
   const handleClick = (index) => {
@@ -32,6 +32,25 @@ const PredictionCard = () => {
             key={index}
             onClick={() => handleClick(index)}
             style={{
-              curs
+              cursor: 'pointer',
+              padding: '0.5rem',
+              borderRadius: '8px',
+              backgroundColor: selected === index ? '#0f0' : '#333',
+              marginBottom: '0.5rem'
+            }}
+          >
+            <span style={{ marginRight: '0.5rem' }}>{option.emoji}</span>
+            {option.text}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default PredictionCard;
+
+
+
 
 
