@@ -1,8 +1,10 @@
 import React from 'react';
-import Home from './pages/Home';
 
-function App() {
-    return <Home />;
+export default function App() {
+  return (
+    <div className="app">
+      <h1>Apocalyptic Pools</h1>
+      <p>La única plataforma donde predecir el caos... paga.</p>
+    </div>
+  );
 }
-
-export default App;
