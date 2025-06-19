@@ -16,17 +16,15 @@ function PredictionCard() {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: '#222',
-        padding: '2rem',
-        borderRadius: '12px',
-        color: 'lime',
-        fontFamily: 'sans-serif',
-        maxWidth: '800px',
-        margin: '2rem auto',
-      }}
-    >
+    <div style={{
+      backgroundColor: '#222',
+      padding: '2rem',
+      borderRadius: '12px',
+      color: 'lime',
+      fontFamily: 'sans-serif',
+      maxWidth: '800px',
+      margin: '2rem auto'
+    }}>
       <h2>¿Qué evento apocalíptico sucederá primero?</h2>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {options.map((option, index) => (
@@ -36,8 +34,7 @@ function PredictionCard() {
             style={{
               cursor: 'pointer',
               marginBottom: '1rem',
-              fontWeight: selected === index ? 'bold' : 'normal',
-              color: selected === index ? 'deepskyblue' : 'lime',
+              color: selected === index ? 'cyan' : 'lime'
             }}
           >
             {option.emoji} {option.text}
@@ -49,6 +46,7 @@ function PredictionCard() {
 }
 
 export default PredictionCard;
+
 
 
 
